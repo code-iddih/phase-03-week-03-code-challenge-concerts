@@ -32,7 +32,7 @@ class Band(Base):
     # Defining the relationship
     concerts_list = relationship(
         'Concert', 
-        back_populates = 'band'
+        back_populates = 'band_instance'
     )
 
     # Object Relationship Methods
@@ -41,7 +41,7 @@ class Band(Base):
         return self.concerts_list
     
     def venues(self):
-        return [concert.venue for concert in self.concerts_list]
+        return [concert.venue_instance for concert in self.concerts_list]
 
 
 # Venue Model
@@ -53,7 +53,7 @@ class Venue(Base):
     # Defining the relationship
     concerts_list = relationship(
         'Concert',
-        back_populates = 'venue'
+        back_populates = 'venue_instance'
     )
 
     # Object Relationship Methods
@@ -62,7 +62,7 @@ class Venue(Base):
         return self.concerts_list
     
     def bands(self):
-        return [concert.band for concert in self.concerts_list] 
+        return [concert.band_instance for concert in self.concerts_list] 
 
 
 # Concert Model
@@ -73,8 +73,11 @@ class Concert(Base):
     date = Column(String(50) , nullable = False)
     band_id = Column(Integer, ForeignKey('bands.id'))
     venue_id = Column(Integer, ForeignKey('venues.id'))
-    band = relationship('Band', back_populates='concerts_list')
-    venue = relationship('Venue', back_populates='concerts_list')
+    band_instance = relationship('Band', back_populates='concerts_list')
+    venue_instance = relationship('Venue', back_populates='concerts_list')
 
     # Object Relationship Methods
+
+    def band(self):
+        return self.band_instance
 
