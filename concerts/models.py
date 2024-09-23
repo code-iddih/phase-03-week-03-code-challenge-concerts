@@ -80,4 +80,7 @@ class Concert(Base):
 
     def band(self):
         return self.band_instance
+    
+    def venue(self):
+        return self.venue_instance
 
