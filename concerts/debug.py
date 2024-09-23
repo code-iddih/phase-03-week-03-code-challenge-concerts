@@ -38,6 +38,10 @@ if __name__ == '__main__':
             print("A new concert has been created Successfully:")
             print("Name:", new_concert.name)
             print("Date:", new_concert.date)
+        
+        # Band all_introductions()
+        example_introduction = print("Introductions for First Band:", first_band.all_introductions())
+
 
 
     # Test retrieving the first Venue

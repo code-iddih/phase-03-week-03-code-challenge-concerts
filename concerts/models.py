@@ -49,6 +49,13 @@ class Band(Base):
         concert_name = f"{self.name} Festival"
         new_concert = Concert(name=concert_name, date=date, band_instance=self, venue_instance=venue)
         return new_concert
+    
+    def all_introductions(self):
+        introductions = []
+        for concert in self.concerts(): 
+            introductions.append(concert.introduction())
+        return introductions
+
 
 
 # Venue Model
