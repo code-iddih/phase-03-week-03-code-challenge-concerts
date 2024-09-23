@@ -42,6 +42,13 @@ class Band(Base):
     
     def venues(self):
         return [concert.venue_instance for concert in self.concerts_list]
+    
+    # Aggregate and Relationship Methods
+    
+    def play_in_venue(self, venue, date):
+        concert_name = f"{self.name} Festival"
+        new_concert = Concert(name=concert_name, date=date, band_instance=self, venue_instance=venue)
+        return new_concert
 
 
 # Venue Model
@@ -88,4 +95,9 @@ class Concert(Base):
 
     def hometown_show(self):
         return self.venue_instance.city == self.band_instance.hometown
+    
+    def introduction(self):
+        return f"Hello {self.venue_instance.city}!!!!! We are {self.band_instance.name} and we're from {self.band_instance.hometown}"
+
+
 
