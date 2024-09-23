@@ -35,6 +35,11 @@ class Band(Base):
         back_populates = 'band'
     )
 
+    # Object Relationship Methods
+
+    def concerts(self):
+        return self.concerts_list
+
 # Venue Model
 class Venue(Base):
     __tablename__ = 'venues'
