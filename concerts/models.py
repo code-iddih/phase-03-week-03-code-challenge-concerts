@@ -39,6 +39,10 @@ class Band(Base):
 
     def concerts(self):
         return self.concerts_list
+    
+    def venues(self):
+        return [concert.venue for concert in self.concerts_list]
+
 
 # Venue Model
 class Venue(Base):

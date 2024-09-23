@@ -23,3 +23,7 @@ if __name__ == '__main__':
         # Band concerts()
         # Returns a collection of all the concerts that the Band has played
         print(" Concerts for First Band:", [concert.name for concert in first_band.concerts()])
+
+        # Band venues()
+        # Returns a collection of all the venues that the Band has performed at
+        print("Venues for First Band:", [venue.title for venue in first_band.venues()])
