@@ -55,6 +55,16 @@ class Band(Base):
         for concert in self.concerts(): 
             introductions.append(concert.introduction())
         return introductions
+    
+    @classmethod
+    def most_performances(cls, session):
+        count = {}
+        bands = session.query(cls).all()
+        for band in bands:
+            count[band] = len(band.concerts())  
+        most_performed_band = max(count, key=count.get)
+        return most_performed_band
+
 
 
 

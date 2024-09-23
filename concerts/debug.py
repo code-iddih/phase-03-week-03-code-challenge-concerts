@@ -40,7 +40,17 @@ if __name__ == '__main__':
             print("Date:", new_concert.date)
         
         # Band all_introductions()
+        # Returns an array of strings representing all the introductions for this band
         example_introduction = print("Introductions for First Band:", first_band.all_introductions())
+
+        # Band most_performances()
+        # Returns the Band instance for the band that has played the most concerts
+        most_performed_band = Band.most_performances(session)
+        print("\nBand with the most performances:")
+        print("Name:", most_performed_band.name)
+        print("Hometown:", most_performed_band.hometown)
+        print("Total Concerts:", len(most_performed_band.concerts()))  
+
 
 
 
