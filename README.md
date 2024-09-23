@@ -190,7 +190,7 @@ database.
 - Run `python3 seed.py`
 5. Start an interactive debugging session to test your methods:
 - Run `python3 debug.py`
-- Run `session.query(Band).first()` (Should return `Band: Imagine Dragons`)
+
 
 ## Usage Examples
 
