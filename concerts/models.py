@@ -60,6 +60,10 @@ class Venue(Base):
 
     def concerts(self):
         return self.concerts_list
+    
+    def bands(self):
+        return [concert.band for concert in self.concerts_list] 
+
 
 # Concert Model
 class Concert(Base):
