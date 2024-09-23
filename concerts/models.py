@@ -66,8 +66,6 @@ class Band(Base):
         return most_performed_band
 
 
-
-
 # Venue Model
 class Venue(Base):
     __tablename__ = 'venues'

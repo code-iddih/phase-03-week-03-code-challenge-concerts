@@ -92,8 +92,6 @@ if __name__ == '__main__':
             print(f"No concerts found at {first_venue.title}.")
 
 
-
-
     # Test retrieving the first Concert
     first_concert = session.query(Concert).first()
     if first_concert:
