@@ -87,6 +87,15 @@ class Venue(Base):
     
     def bands(self):
         return [concert.band_instance for concert in self.concerts_list] 
+    
+    # Aggregate and Relationship Methods
+
+    def concert_on(self, date):
+        for concert in self.concerts():  
+            if concert.date == date:
+                return concert
+        return None  # If there is no concert on that specific date
+
 
 
 # Concert Model
