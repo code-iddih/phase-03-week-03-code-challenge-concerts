@@ -27,3 +27,16 @@ if __name__ == '__main__':
         # Band venues()
         # Returns a collection of all the venues that the Band has performed at
         print("Venues for First Band:", [venue.title for venue in first_band.venues()])
+
+
+
+        # Test retrieving the first Venue
+        first_venue = session.query(Venue).first()
+        if first_venue:
+            print("\nFirst Venue:")
+            print(" Title:", first_venue.title)
+            print(" City:", first_venue.city)
+
+            # Venue concerts()
+            # Returns a collection of all the concerts for the Venue
+            print(" Concerts for First Venue:", [concert.name for concert in first_venue.concerts()])
